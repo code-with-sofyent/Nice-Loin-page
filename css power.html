@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Showcase</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+
+    <div class="message">
+
+
+    </div>
+
+
+
+
+    <body>
+
+        <div class="snowfall">
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <div class="snowflake"></div>
+            <!-- Add more snowflakes as needed -->
+        </div>
+
+
+
+
+
+        <div class="login-form">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button id="login-button">Login</button>
+            <div class="error-message" id="error-message">Please complete the inputs!</div>
+        </div>
+
+        <footer class="footer">code with sofyent</footer>
+
+    </body>
+
+</html>
+
+
+<script>
+    // JavaScript to handle "Goodbye" to "Heart" transition on button click
+    document.querySelector('.button').addEventListener('click', () => {
+        const goodbyeText = document.querySelector('.goodbye-text');
+        const heartIcon = document.querySelector('.heart-icon');
+
+        // Trigger transition
+        goodbyeText.classList.add('clicked');
+        heartIcon.classList.add('clicked');
+    });
+
+</script>
+
+<script>
+    // Number of snowflakes
+    const snowflakeCount = 50; // Change this number to increase or decrease the snowflakes
+
+    // Select the snowfall container
+    const snowfallContainer = document.querySelector('.snowfall');
+
+    // Create snowflakes dynamically
+    for (let i = 0; i < snowflakeCount; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowfallContainer.appendChild(snowflake);
+    }
+</script>
+
+<script>
+    // JavaScript for form validation
+    const loginButton = document.getElementById('login-button');
+    const errorMessage = document.getElementById('error-message');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    loginButton.addEventListener('click', () => {
+        if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+            // Show error message with animation
+            errorMessage.classList.add('show');
+
+            // Shake the form for emphasis
+            const loginForm = document.querySelector('.login-form');
+            loginForm.style.animation = 'shake 0.5s ease';
+
+            // Remove the shake animation after it completes
+            setTimeout(() => {
+                loginForm.style.animation = '';
+            }, 500);
+        } else {
+            // Hide error message if inputs are filled
+            errorMessage.classList.remove('show');
+
+            // Proceed with login logic (e.g., submit form)
+            alert('Login successful!');
+        }
+    });
+
+    // Shake Animation
+    const style = document.createElement('style');
+    style.innerHTML = `
+          @keyframes shake {
+              0% { transform: translateX(0); }
+              25% { transform: translateX(-10px); }
+              50% { transform: translateX(10px); }
+              75% { transform: translateX(-10px); }
+              100% { transform: translateX(0); }
+          }
+      `;
+    document.head.appendChild(style);
+</script>
+
+
+<script>
+    // JavaScript for form validation
+    const loginButton = document.getElementById('login-button');
+    const errorMessage = document.getElementById('error-message');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    loginButton.addEventListener('click', () => {
+        if (usernameInput.value.trim() === '' || passwordInput.value.trim() === '') {
+            // Show error message with animation
+            errorMessage.classList.add('show');
+
+            // Shake the form for emphasis
+            const loginForm = document.querySelector('.login-form');
+            loginForm.style.animation = 'shake 0.5s ease';
+
+            // Remove the shake animation after it completes
+            setTimeout(() => {
+                loginForm.style.animation = '';
+            }, 500);
+        } else {
+            // Hide error message if inputs are filled
+            errorMessage.classList.remove('show');
+
+            // Proceed with login logic (e.g., submit form)
+            alert('Login successful!');
+        }
+    });
+
+</script>
